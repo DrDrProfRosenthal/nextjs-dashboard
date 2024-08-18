@@ -9,7 +9,25 @@ export default function Page() {
   return (
 
 
+      
     <main className='background-color light-color'>
+
+
+
+ 
+      <div className="hamburger-con" id="hamburger-con">
+          <div className="bar1 bold-background-color"></div>
+          <div className="bar2 bold-background-color"></div>
+          <div className="bar3 bold-background-color"></div>
+      </div>
+
+
+
+
+      <div>
+
+      </div>
+
 
       <div className="center-container">
         <div className="prompt-container">

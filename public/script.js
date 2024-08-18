@@ -59,11 +59,17 @@ function displayNextVocab() {
     
 
     document.querySelector('#hintBtn').addEventListener('click', () => {
-        revealObj(document.querySelector('#englishVocab'))
-        hideObj(document.querySelector('#hintBtn'))
-        hideObj(document.querySelector('#englishVocabPlaceholder'))
+        revealObj(document.querySelector('#englishVocab'));
+        hideObj(document.querySelector('#hintBtn'));
+        hideObj(document.querySelector('#englishVocabPlaceholder'));
     
     });
+
+
+    document.querySelector('.hamburger-con').addEventListener('click',() => {
+        toggleClass(document.querySelector('.hamburger-con'))        
+    });
+
 
 
     function revealObj(e){
@@ -74,5 +80,7 @@ function displayNextVocab() {
         e.setAttribute("class", "hidden");
      }
 
-
- 
+     function toggleClass(x) {
+        x.classList.toggle("change");
+        console.log("change")
+      }
