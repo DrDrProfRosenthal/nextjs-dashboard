@@ -1,6 +1,6 @@
 
 console.log("hello im your computer")
-
+/*
 document.getElementById("myBtn").focus();
 
 var vocabList = [];
@@ -53,3 +53,26 @@ function displayNextVocab() {
             alert('Incorrect! Try again.');
         }
     });
+
+    */
+
+    
+
+    document.querySelector('#hintBtn').addEventListener('click', () => {
+        revealObj(document.querySelector('#englishVocab'))
+        hideObj(document.querySelector('#hintBtn'))
+        hideObj(document.querySelector('#englishVocabPlaceholder'))
+    
+    });
+
+
+    function revealObj(e){
+       e.removeAttribute("class","hidden");
+    }
+
+    function hideObj(e){
+        e.setAttribute("class", "hidden");
+     }
+
+
+ 
