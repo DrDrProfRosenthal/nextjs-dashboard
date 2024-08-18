@@ -1,14 +1,14 @@
+markup;"Aufschlag, PreiserhÃ¶hung, Textauszeichnung - also Code"
+to span;"etwas umfassen, Ã¼berspannen"
 reconcile;"schlichten, in Einklang bringen"
 receipt;Quittung
 nesting;Verschachteln
-markup;"Aufschlag, Preiserh?ung, Textauszeichnung - also Code"
 prescribe;"vorschreiben, verordnen"
 cabbage;Kohl
 granular;detailierter
 fallback (plan);Ersatzplan
 defer;aufschieben
 invoice;Abrechnung
-to span;"etwas umfassen, ?erspannen"
 to invoke;aufrufen
 coercion;Zwang
 schema ;Schema
@@ -257,8 +257,8 @@ Chrominance;
 Luminance;
 Rods and cones;
 Yieldd;
-"foolish, peremptory ";
-obnoxious ;
+"foolish, peremptoryï¿½";
+obnoxiousï¿½;
 futility;
 ineractiability;
 raptured;

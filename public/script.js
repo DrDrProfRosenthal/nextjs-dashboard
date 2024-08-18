@@ -1,10 +1,14 @@
 
-console.log("hello im your computer")
-/*
+console.log("hello I'm your computer")
+
 document.getElementById("myBtn").focus();
 
 var vocabList = [];
 var currentIndex = 0;
+
+
+
+
     
 fetch('vocabs.csv')
         .then(response => response.text())
@@ -14,7 +18,7 @@ fetch('vocabs.csv')
                 displayNextVocab();
             }
         })
-        //.catch(error => console.error('Error loading CSV:', error));
+        .catch(error => console.error('Error loading CSV:', error));
 
  function parseCSV(data) {
         const lines = data.split('\n');
@@ -32,6 +36,7 @@ fetch('vocabs.csv')
 
 function displayNextVocab() {
         if(vocabList[currentIndex].english != "error999" && currentIndex < vocabList.length){//sind noch Vokabeln da, schreib die nächste hin  
+            console.log(vocabList[currentIndex].english)
             document.getElementById("current-vocab").textContent  = vocabList[currentIndex].german;             
         } else { // sind keine Vokabeln mehr da, fang von vorne an
             currentIndex = 0;
@@ -54,7 +59,7 @@ function displayNextVocab() {
         }
     });
 
-    */
+    
 
     
 
@@ -72,15 +77,79 @@ function displayNextVocab() {
 
 
 
-    function revealObj(e){
+    function revealObj(e){ //but keep all attributes
+      let d = '"'+e.getAttribute("class")+'"';
        e.removeAttribute("class","hidden");
+       e.setAttribute("class", d);
     }
 
     function hideObj(e){
         e.setAttribute("class", "hidden");
      }
 
+
+ 
+
      function toggleClass(x) {
         x.classList.toggle("change");
         console.log("change")
+        togglePopUp();
+      
       }
+
+
+ 
+
+
+      function togglePopUp(){
+   
+        console.log(window.getComputedStyle(document.querySelector(".popupCon")).opacity)
+        
+     if(window.getComputedStyle(document.querySelector(".popupCon")).opacity == 0 ){
+            document.querySelector(".popupCon").style.opacity = "100%";
+            document.querySelector(".popupCon").style.height = "100%";
+            console.log("open")
+     }else if(window.getComputedStyle(document.querySelector(".popupCon")).opacity == 1 ){
+        document.querySelector(".popupCon").style.opacity = "0%";
+        document.querySelector(".popupCon").style.height = "0%";
+        console.log("close")
+        }
+
+        console.log("no boy")
+
+    }
+
+
+  
+    document.querySelector('#addBtn').addEventListener('click', writeToFile);
+    
+
+    function writeInFile(){
+
+    }
+                        
+            
+        async function writeToFile() {
+            const response = await fetch('writeToFile.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: 'Hello, from Next.js!' }),
+            });
+        
+            const data = await response.json();
+            console.log(data);
+        }
+        
+
+    
+    
+
+
+
+
+ 
+
+
+

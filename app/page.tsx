@@ -61,7 +61,7 @@ export default function Page() {
                             <span className='english-example montserrat italic light-color'> 
                               "Notes, while remaining 
                               <span id="englishVocabPlaceholder" className='englishExampleVocab counter-color'>&nbsp;_____&nbsp;</span>
-                              <span id="englishVocab counter-color" className='englishExampleVocab counter-color hidden'>&nbsp;wary&nbsp;</span>        
+                              <span id="englishVocab" className='counter-color englishVocab englishExampleVocab counter-color hidden'>&nbsp;wary&nbsp;</span>        
                               and critical, that
                               a pilot project may help Member States better to understand the inherent [...]" 
                             </span>
@@ -81,6 +81,21 @@ export default function Page() {
 
 
     </div>
+
+      
+    <div className='popupCon closed background-color bold-color'>
+    <div className='popUpMenu'>
+
+         
+          <div>
+            <span className='dm-sans font-medium'>Input new words...</span>
+            <input className='dm-sans font-medium' value={"hello"}></input>
+            <button className='bold-color font-medium montserrat italic bold-border-color' id="addBtn" >Add vocab </button>
+          </div>
+      </div>  
+    </div>
+    
+   
 
     </main>
   );
