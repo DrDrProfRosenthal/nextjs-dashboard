@@ -154,7 +154,6 @@ input:focus{
   background-color: transparent;
   border: 3px solid;
   border-radius: 10px;
-
   font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
@@ -192,6 +191,7 @@ input:focus{
 .vocab-con{
   display: block;
    text-align: center;
+   margin: 5%;
 }           
 
 
@@ -237,9 +237,6 @@ input:focus{
   margin-top: 2%;
 }
 
-.vocab-con{
-  margin: 5%;
-}
 
 #hintBtn{
   cursor: pointer;
@@ -270,6 +267,18 @@ input:focus{
     line-height: 1.2;
    }
   
+   .bold-weight{
+    font-weight: bold;
+   }
   
+
+   .centered-input{
+    margin-bottom: 5px;
+   }
+
+    .vocab-con{
+      margin:5% 0%;
+    }
+   
 }
 

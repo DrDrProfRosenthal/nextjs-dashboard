@@ -29,7 +29,7 @@ export default function Page() {
        
               
                   <div className='vocab-con font-medium'>
-                    <span className='verbBox font-medium bold-color'>to</span>
+                    <span className='verbBox font-medium bold-color bold-weight hidden'>to</span>
                     <input type="text" className="centered-input font-medium bold-color bold-border-color" placeholder="..." />
                   <button  className="btn font-medium bold-color bold-border-color" id="myBtn" type="submit">Check!</button>
                   </div>
@@ -48,7 +48,7 @@ export default function Page() {
                               a pilot project may help Member States better to understand the inherent [...]" 
                             </span>
                             <div>
-                             <button className='bold-color font-small montserrat italic bold-border-color'  id="hintBtn">Reveal hint </button>
+                             <button className='bold-color font-medium montserrat italic bold-border-color'  id="hintBtn">Reveal hint </button>
                             </div>
                             
                         </div>
