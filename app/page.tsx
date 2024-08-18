@@ -14,13 +14,13 @@ export default function Page() {
 
 
 
- 
-      <div className="hamburger-con" id="hamburger-con">
+   <div className=''>
+      <div className="hamburgerparent hamburger-con red" id="hamburger-con">
           <div className="bar1 bold-background-color"></div>
           <div className="bar2 bold-background-color"></div>
           <div className="bar3 bold-background-color"></div>
       </div>
-
+    </div>
 
 
 
