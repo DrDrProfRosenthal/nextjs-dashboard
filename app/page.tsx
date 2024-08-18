@@ -10,7 +10,7 @@ export default function Page() {
 
 
       
-    <main className='background-color light-color'>
+   <main className='background-color light-color'>
 
 
 
@@ -22,11 +22,6 @@ export default function Page() {
       </div>
     </div>
 
-
-
-      <div>
-
-      </div>
 
 
       <div className="center-container">
@@ -49,7 +44,7 @@ export default function Page() {
                   <div className='vocab-con font-medium'>
                     <span className='verbBox font-medium bold-color bold-weight hidden'>to</span>
                     <input type="text" className="centered-input font-medium bold-color bold-border-color" placeholder="..." />
-                  <button  className="btn font-medium bold-color bold-border-color" id="myBtn" type="submit">Check!</button>
+                    <button  className="btn font-medium bold-color bold-border-color" id="myBtn" type="submit">Check!</button>
                   </div>
 
 
@@ -66,7 +61,7 @@ export default function Page() {
                               a pilot project may help Member States better to understand the inherent [...]" 
                             </span>
                             <div>
-                             <button className='bold-color font-medium montserrat italic bold-border-color'  id="hintBtn">Reveal hint </button>
+                              <button className='bold-color font-medium montserrat italic bold-border-color'  id="hintBtn">Reveal hint </button>
                             </div>
                             
                         </div>
@@ -76,22 +71,17 @@ export default function Page() {
         
 
           </div>
-
         </div>
-
-
     </div>
 
       
     <div className='popupCon closed background-color bold-color'>
-    <div className='popUpMenu'>
-
-         
-          <div>
-            <span className='dm-sans font-medium'>Input new words...</span>
-            <input className='dm-sans font-medium' value={"hello"}></input>
-            <button className='bold-color font-medium montserrat italic bold-border-color' id="addBtn" >Add vocab </button>
-          </div>
+     <div className='popUpMenu'>          
+            <div>
+              <span className='dm-sans font-medium'>Input new words...</span>
+              <input className='dm-sans font-medium' value={"hello"}></input>
+              <button className='bold-color font-medium montserrat italic bold-border-color' id="addBtn" >Add vocab </button>
+            </div>
       </div>  
     </div>
     
