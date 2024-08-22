@@ -123,7 +123,7 @@ export default async function Page() {
 
                             </form>  
                             <br></br>
-                            <span className='dm-sans text-2xl block'>Source: Linguee</span>          
+                            <span className='dm-sans text-base block'>Source: Linguee</span>          
                         </div>
                       
 
