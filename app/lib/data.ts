@@ -10,7 +10,7 @@ import {
 import { formatCurrency } from './utils';
 
 
-console.log("loading data.ts");
+console.log("loading dataa.ts");
 
 export async function fetchRevenue() {
   try {
