@@ -1,11 +1,10 @@
 
-console.log("hello I'm your computer")
+console.log("train js")
 
 // document.getElementById("myBtn").focus();
 
 var vocabList = [];
 var currentIndex = 0;
-
 
 
 /*
@@ -72,7 +71,7 @@ try{
     
     });
 }catch(err){
-
+    console.lgo
 }
 
 

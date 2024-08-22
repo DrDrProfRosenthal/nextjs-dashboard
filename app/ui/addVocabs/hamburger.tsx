@@ -26,23 +26,23 @@ export default function hamburger() {
             <div className='popupForm lg:text-base popupForm'>                                           
                 <div className='flex flex-col'>
 
-                <Link    
-                     href={"/"}        
+                <a    
+                     href="/train"        
                 >
-                    <p className='text-base'>Main</p>                    
-                </Link>
+                    <p className='text-2xl hover:underline transition ease-in-out'>Train</p>                    
+                </a>
 
                     <br></br>
 
-                <Link 
-                    href={"/addVocabs"} 
+                <a 
+                    href="/addVocabs" 
                 >
-                    <p className='text-base'>Add Vocabs</p>
+                    <p className='text-2xl hover:underline transition ease-in-out'>Add Vocabs</p>
                
-                </Link>
+                </a>
 
 
-                  <span className='dm-sans text-2xl '>Input new words...</span>              
+                     
                 </div>                                        
             </div>
         </div>
