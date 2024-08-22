@@ -122,6 +122,8 @@ export default async function Page() {
                             </div>
 
                             </form>  
+                            <br></br>
+                            <span className='dm-sans text-2xl block'>Source: Linguee</span>          
                         </div>
                       
 
