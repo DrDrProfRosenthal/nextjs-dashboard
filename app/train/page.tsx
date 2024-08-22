@@ -8,11 +8,15 @@ import { ArrowLeftIcon, ArrowRightIcon,PencilIcon } from '@heroicons/react/24/ou
 import Pagination from '@/app/ui/addVocabs/pagination';
 import Hamburger from '@/app/ui/addVocabs/hamburger';
 
+import RevenueChart from '@/app/ui/dashboard/revenue-chart';
+import { fetchRevenue, fetchLatestInvoices, fetchCardData, } from '@/app/lib/data';
 
 export default async function Page() {
  // const customers = await fetchCustomers();
 
  const totalPages = 2;
+
+ const revenue = await fetchRevenue();
 
   return (
 
@@ -26,6 +30,10 @@ export default async function Page() {
       <div className="center-container">
         <div className="prompt-container bold-border-color ">
             
+
+        <RevenueChart revenue={revenue}  /> 
+
+
               <div className="vocab-con my-4">
                 <span className="current-vocab dm-sans text-4xl bold-color font-semibold" id="current-vocab">vorsichtig, achtsam, argwöhnisch  </span>
 
