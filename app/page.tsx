@@ -82,13 +82,78 @@ export default async function Page() {
 
       
     <div className='popupCon closed background-color bold-color'>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+          
+                        <div className='popupForm lg:font-medium popupForm'>  
+
+                        
+                                                  
+                      <div className='flex flex-col'>
+                        <span className='dm-sans text-2xl lg:font-medium'>Input new words...</span>
+                        <input className='dm-sans text-4xl lg:font-medium' value={"wary"}></input>
+                      </div>                                
+
+                      <form action={createInvoice}>                          
+                        <div className='vocabInputField'>
+                              <div>
+                                  <div className=''>
+                                    <label className='text-basetext'>Example:&nbsp;</label>
+                                    <span className='text-basetext'>I am always wary when paying online with my credit card.</span>
+                                  </div>
+                                  <Pagination totalPages={2} />   
+                              </div> 
+                              
+                              <div>
+                                  <span className='dm-sans text-4xl block'>wary</span>
+                              </div>
+
+                              <div>
+                                <div className='inline-flexLG'>
+                                                      <label className='w-2 lg:w-10'>Beispiel:&nbsp;</label>
+                                                      <span className='lg:w-2 lg:w-10'>Wenn ich online mit Kreditkarte bezahle, bin ich immer vorsichtig.</span>
+                                                    </div>
+                                                    <Pagination totalPages={2} />   
+                                </div>   
+
+                            <div>
+
+                                      <div className='flex flex-row text-2xl'>
+                                          <span className='dm-sans text-2xl  block'>vorsichtig, achtsam, argwöhnisch</span>                        
+                                      </div>
+                                      <input className='dm-sans  hidden' value={"vorsichtig, achtsam, argwöhnisch"}></input>
+                                      <PencilIcon className="w-10 pencilBtn bold-color bold-border-color" />         
+                                              
+                                      
+                                    
+                            </div>
+                                  
+                            <div className='align-center'>
+                                <button type='submit' className='bold-color lg:font-medium montserrat italic bold-border-color text-base hover:bg-gray-100' id="addBtn" >Add vocab </button>
+                            </div>
+
+
+                        </div>
+                      </form>   
 
 
 
 
+                      </div>  
+                        
+        
+     
+        </div>
+    
+ 
+    
 
-     <div className='popupForm lg:font-medium popupForm'>  
+    </main>
+  );
+}
+
+  /*
+
+   <div className='popupForm lg:font-medium popupForm'>  
 
    
                             
@@ -144,69 +209,5 @@ export default async function Page() {
        
 
 
-       </div>  
-    </div>
-    
- 
-    
-
-    </main>
-  );
-}
-
-  /*
-
- 
-
-
-
-  <div>
-                  
-                                               
-
-                       <form action={createInvoice}>                          
-                          <div className='vocabInputField'>
-                                <div >
-                                    <div className='inline-flex'>
-                                      <label className='text-sm lg:text-sm'>Example:&nbsp;</label>
-                                      <span className='w-2 lg:w-10'>I am always wary when paying online with my credit card.</span>
-                                    </div>
-                                    <Pagination totalPages={2} />   
-                                </div>              
-                          </div>
-                        </form>   
-
-              </div>
-
-
-
-              <div>
-                  <span className='dm-sans w-4 lg:w-4 block'>wary</span>
-              </div>
-
-              <div>
-                <div className='inline-flexLG'>
-                                      <label className='w-2 lg:w-10'>Beispiel:&nbsp;</label>
-                                      <span className='lg:w-2 lg:w-10'>Wenn ich online mit Kreditkarte bezahle, bin ich immer vorsichtig.</span>
-                                    </div>
-                                    <Pagination totalPages={2} />   
-                </div>   
-
-              <div >
-
-                <div className=''>
-                                      <span className='dm-sans lg:font-medium block'>vorsichtig</span>,&nbsp;
-                                      <span className='dm-sans lg:font-medium block'>achtsam</span>,&nbsp;
-                                      <span className='dm-sans lg:font-medium block'>argwöhnisch</span>                            
-                                  </div>
-                                  <input className='dm-sans  hidden' value={"vorsichtig, achtsam, argwöhnisch"}></input>
-                                  <PencilIcon className="w-10 pencilBtn bold-color bold-border-color" />         
-                                          
-                                  
-                                
-                                </div>
-                              
-                              <div className='align-center'>
-                                <button type='submit' className='bold-color lg:font-medium montserrat italic bold-border-color text-base hover:bg-gray-100' id="addBtn" >Add vocab </button>
-           </div>
+               </div>  
                       */

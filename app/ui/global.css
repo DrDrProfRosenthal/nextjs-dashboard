@@ -323,7 +323,7 @@ input:focus{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: yellow;
+
  
 }
 
@@ -336,7 +336,7 @@ input:focus{
   width: 80% !important;
 
   transform: translate(0%, -10%);
-  background-color: red;
+
 
 }
 
