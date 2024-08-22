@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
@@ -60,7 +62,11 @@ body, html {
  }
 
  .calm-background-color{
-   background-color: #FFF5E1;
+   background-color: #EBD3F8;
+ }
+
+ .calm-color{
+  color: #EBD3F8;;
  }
 
 
@@ -73,8 +79,8 @@ body, html {
 }
 
 
-.bold-border-color{
-  border-color: rgb(46, 7, 63);
+.bold-border-color {
+  border-color: rgb(46, 7, 63) !important;
 }
 
 
@@ -115,18 +121,23 @@ input:focus{
   line-height: 1;
  }
 
+  .font-medium{
+    font-size:7vh;
+    line-height: 1.2;
+  }
+
+
+
  .font-small{
   font-size: 3vh;
   line-height: 1.2;
  }
 
- .font-medium{
-  font-size:7vh;
+
+.font-verysmall{
+  font-size: 2vh;
   line-height: 1.2;
- }
-
-
-
+}
 
 
 
@@ -204,6 +215,9 @@ input:focus{
   display: inline-block;
 }
 
+.block{
+  display: block;
+}
 
 
 .italic{
@@ -294,9 +308,9 @@ input:focus{
   position: fixed;
   display: block;
   z-index: 10;
- 
-  height: 0%;
-  opacity: 0%;
+
+  height: 100%;
+  opacity: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -306,26 +320,63 @@ input:focus{
   transition: 0.5s ease-in-out;
 }
 
-.popUpMenu{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
+
+
+
+.vocabInputField{
+  display: flex;
+  flex-direction: column;
+}
+
+.arrowBtns{
+  border-radius: 10px;
+  padding: 4px;
+  border: 2px solid;
+}
+
+.pencilBtn{
+  border-radius: 10px;
+  padding: 4px;
+  border: 2px solid;
+}
+
+
+.align-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+#addBtn{
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 0 1vw;
+}
+
+.inline-flexLG{
+  display: flex;
 }
 
 
 
-
 @media only screen and (max-width: 800px) {
+  
+  
+  /*
   .font-extrabold{
     font-size: 14vw;
     line-height: 1;
    }
-  
+   .font-verysmall{
+    font-size: 1vw;
+    line-height: 1.2;
+   }
+
    .font-small{
-    font-size: 4.5vw;
+    font-size: 2vw;
     line-height: 1.2;
    }
   
@@ -338,6 +389,7 @@ input:focus{
     font-weight: bold;
    }
   
+   */
 
    .centered-input{
     margin-bottom: 5px;
@@ -347,6 +399,9 @@ input:focus{
       margin:5% 0%;
     }
 
+    .inline-flexLG{
+        display: inline;
+      }
 
 
     
@@ -356,6 +411,8 @@ input:focus{
   max-width: min-content;
   max-height: min-content;
   padding: 6px 9px;
+  position: fixed;
+  z-index: 99;
  
 }
 

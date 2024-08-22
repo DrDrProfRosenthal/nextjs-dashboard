@@ -120,21 +120,6 @@ function displayNextVocab() {
     }
 
 
-  
-    document.querySelector('#addBtn').addEventListener('click', writeToFile);
-    
-
-    function writeInFile(){
-
-    }
-
-    
-    
-
-
-
-
  
-
 
 
