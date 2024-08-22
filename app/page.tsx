@@ -82,27 +82,27 @@ export default async function Page() {
 
       
     <div className='popupCon closed background-color bold-color'>
-     <div className='align-center lg:font-medium popupForm'>  
+     <div className='popupForm lg:font-medium popupForm'>  
 
    
                             
                   <div className='flex flex-col'>
                     <span className='dm-sans text-2xl lg:font-medium'>Input new words...</span>
-                    <input className='dm-sans text-2xl lg:font-medium' value={"wary"}></input>
+                    <input className='dm-sans text-4xl lg:font-medium' value={"wary"}></input>
                   </div>                                
 
                   <form action={createInvoice}>                          
                      <div className='vocabInputField'>
                            <div>
                                <div className=''>
-                                 <label className='text-sm lg:text-sm'>Example:&nbsp;</label>
-                                 <span className='w-2 lg:w-10'>I am always wary when paying online with my credit card.</span>
+                                 <label className='text-basetext'>Example:&nbsp;</label>
+                                 <span className='text-basetext'>I am always wary when paying online with my credit card.</span>
                                </div>
                                <Pagination totalPages={2} />   
                            </div> 
                            
                            <div>
-                              <span className='dm-sans w-4 lg:w-4 block'>wary</span>
+                              <span className='dm-sans text-4xl block'>wary</span>
                           </div>
 
                           <div>
