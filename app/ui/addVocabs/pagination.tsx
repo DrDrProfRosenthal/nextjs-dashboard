@@ -10,13 +10,13 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
 
     <div className="flex">
         <div className="inline-flex arrowBtns" title='previous'>
-        <ArrowLeftIcon className="w-6  arrowBtns bold-color bold-border-color" 
+        <ArrowLeftIcon className="w-8  arrowBtns bold-color bold-border-color" 
         direction="left"
         // onClick={previousExample}
         />
        <span className='font-verysmall' title='next'>&nbsp;</span>
         <ArrowRightIcon 
-        className="w-6 arrowBtns bold-color bold-border-color"
+        className="w-8 arrowBtns bold-color bold-border-color"
         // onClick={nextExample}
         />
 

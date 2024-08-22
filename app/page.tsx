@@ -118,7 +118,7 @@ export default async function Page() {
                             <div>
 
                                       <div className='flex flex-row text-2xl'>
-                                          <span className='dm-sans text-2xl  block'>vorsichtig, achtsam, argwöhnisch</span>                        
+                                          <span className='dm-sans text-2xl block'>vorsichtig, achtsam, argwöhnisch</span>                        
                                       </div>
                                       <input className='dm-sans  hidden' value={"vorsichtig, achtsam, argwöhnisch"}></input>
                                       <PencilIcon className="w-10 pencilBtn bold-color bold-border-color" />         
