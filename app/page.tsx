@@ -5,7 +5,13 @@ import styles from '@/app/ui/home.module.css';
 import Script from 'next/script';
 import Head from 'next/head';
 
-export default function Page() {
+import Form from '@/app/ui/invoices/create-form';
+import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
+import { fetchCustomers } from '@/app/lib/data';
+import { createInvoice } from '@/app/lib/actions';
+
+export default async function Page() {
+ // const customers = await fetchCustomers();
   return (
 
 
@@ -81,6 +87,26 @@ export default function Page() {
               <span className='dm-sans font-medium'>Input new words...</span>
               <input className='dm-sans font-medium' value={"hello"}></input>
               <button className='bold-color font-medium montserrat italic bold-border-color' id="addBtn" >Add vocab </button>
+
+                    <Breadcrumbs
+                            breadcrumbs={[
+                              { label: 'Invoices', href: '' },
+                              {
+                                label: 'Create Invoice',
+                                href: '',
+                                active: true,
+                              },
+                            ]}
+                          />
+
+                <form action={createInvoice}>
+                  <select>
+                    asdf
+                  </select>
+                  <input placeholder='somehit'></input>
+                  <input placeholder='somehit'></input>
+                  <button type='submit' className='bold-color font-medium montserrat italic bold-border-color' id="addBtn" >Add vocab </button>
+                  </form>           
             </div>
       </div>  
     </div>

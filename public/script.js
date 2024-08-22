@@ -127,21 +127,6 @@ function displayNextVocab() {
     function writeInFile(){
 
     }
-                        
-            
-        async function writeToFile() {
-            const response = await fetch('writeToFile.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ text: 'Hello, from Next.js!' }),
-            });
-        
-            const data = await response.json();
-            console.log(data);
-        }
-        
 
     
     
