@@ -25,7 +25,6 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>{children}</body>
 
       <Script src="/script.js" strategy="lazyOnload" />
-      <Script src="/hamburger.js" strategy="lazyOnload" />
     </html>
   );
 }

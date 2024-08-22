@@ -1,14 +1,14 @@
 
 console.log("hello I'm your computer")
 
-document.getElementById("myBtn").focus();
+// document.getElementById("myBtn").focus();
 
 var vocabList = [];
 var currentIndex = 0;
 
 
 
-
+/*
     
 fetch('vocabs.csv')
         .then(response => response.text())
@@ -60,7 +60,9 @@ function displayNextVocab() {
     });
 
     
+*/
 
+try{
     
 
     document.querySelector('#hintBtn').addEventListener('click', () => {
@@ -69,55 +71,25 @@ function displayNextVocab() {
         hideObj(document.querySelector('#englishVocabPlaceholder'));
     
     });
+}catch(err){
 
-
-    document.querySelector('.hamburger-con').addEventListener('click',() => {
-        toggleClass(document.querySelector('.hamburger-con'))        
-    });
+}
 
 
 
-    function revealObj(e){ //but keep all attributes
-      let d = '"'+e.getAttribute("class")+'"';
-       e.removeAttribute("class","hidden");
-       e.setAttribute("class", d);
-    }
+function revealObj(e){ //but keep all attributes
+    let d = '"'+e.getAttribute("class")+'"';
+     e.removeAttribute("class","hidden");
+     e.setAttribute("class", d);
+  }
 
-    function hideObj(e){
-        e.setAttribute("class", "hidden");
-     }
-
-
- 
-
-     function toggleClass(x) {
-        x.classList.toggle("change");
-        console.log("change")
-        togglePopUp();
-      
-      }
+  function hideObj(e){
+      e.setAttribute("class", "hidden");
+   }
 
 
- 
 
 
-      function togglePopUp(){
-   
-        console.log(window.getComputedStyle(document.querySelector(".popupCon")).opacity)
-        
-     if(window.getComputedStyle(document.querySelector(".popupCon")).opacity == 0 ){
-            document.querySelector(".popupCon").style.opacity = "100%";
-            document.querySelector(".popupCon").style.height = "100%";
-            console.log("open")
-     }else if(window.getComputedStyle(document.querySelector(".popupCon")).opacity == 1 ){
-        document.querySelector(".popupCon").style.opacity = "0%";
-        document.querySelector(".popupCon").style.height = "0%";
-        console.log("close")
-        }
-
-        console.log("no boy")
-
-    }
 
 
  
