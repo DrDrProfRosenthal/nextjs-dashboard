@@ -8,7 +8,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
     return(
 
 
-    <div className="flex">
+    <div className="flex my-3">
         <div className="inline-flex arrowBtns" title='previous'>
         <ArrowLeftIcon className="w-8  arrowBtns bold-color bold-border-color" 
         direction="left"

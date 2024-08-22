@@ -46,7 +46,7 @@ body, html {
  .dm-sans {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500;
+  
   font-style: normal;
 }
 
@@ -117,30 +117,6 @@ input:focus{
     color:#FF6969;
   }
 
- .font-extrabold{
-  font-size: 12vh;
-  line-height: 1;
- }
-
-  .font-medium{
-    font-size:7vh;
-    line-height: 1.2;
-  }
-
-
-
- .font-small{
-  font-size: 3vh;
-  line-height: 1.2;
- }
-
-
-.font-verysmall{
-  font-size: 2vh;
-  line-height: 1.2;
-}
-
-
 
 
 .center-container {
@@ -161,6 +137,10 @@ input:focus{
   display: flex;
   flex-direction: column;
 
+  }
+
+  .popUpSection{
+    margin: 1rem 0;
   }
 
 
@@ -203,9 +183,7 @@ input:focus{
          }
 
 
-.vocab-con{
-
-}           
+      
 
 
 .inline-block{
@@ -226,17 +204,8 @@ input:focus{
 }
 
 .verbBox{
-  padding: 10px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: 600;
-  display: inline;
-  line-height: 0.8;
-
+  font-family: Georgia, 'Times New Roman', Times, serif;  
 }
-
-
-
-
 
 
 .flex-container {
@@ -410,9 +379,6 @@ input:focus{
    */
 
  
-    .vocab-con{
-     
-    }
 
     .inline-flexLG{
         display: inline;
