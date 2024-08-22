@@ -144,7 +144,7 @@ input:focus{
 
 
 .center-container {
-  margin-top: 10%;
+  margin: 10% 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,7 +164,7 @@ input:focus{
   }
 
 
-.centered-input {
+.vocab-input {
   padding: 10px;
   background-color: transparent;
   border: 3px solid;
@@ -227,8 +227,10 @@ input:focus{
 
 .verbBox{
   padding: 10px;
-
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 600;
+  display: inline;
+  line-height: 0.8;
 
 }
 
@@ -407,10 +409,7 @@ input:focus{
   
    */
 
-   .centered-input{
-    margin-bottom: 5px;
-   }
-
+ 
     .vocab-con{
      
     }

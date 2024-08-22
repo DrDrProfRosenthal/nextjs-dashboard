@@ -37,10 +37,10 @@ export default async function Page() {
               </div>
                
              
-              <div className='vocab-con my-4'>
-                    <span className='verbBox text-base bold-color bold-weight hidden'>to</span>
-                    <input type="text" className="centered-input text-base bold-color bold-border-color" placeholder="..." />
-                    <button  className="btn text-base bold-color bold-border-color" id="myBtn" type="submit">Check!</button>
+              <div className='align-center vocab-con '>
+                    <span className='verbBox text-xl bold-color dm-sans m0'>to</span>
+                    <input type="text" className="vocab-input text-2xl bold-color bold-border-color my-4" placeholder="..." />
+                    <button  className="btn text-2xl bold-color bold-border-color" id="myBtn" type="submit">Check!</button>
               </div>
 
 
