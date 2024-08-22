@@ -333,7 +333,7 @@ input:focus{
 
 
   height: 50%;
-  width: 65% !important;
+  width: 80% !important;
 
   transform: translate(0%, -10%);
   background-color: red;

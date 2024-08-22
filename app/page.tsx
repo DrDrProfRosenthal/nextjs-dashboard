@@ -116,9 +116,9 @@ export default async function Page() {
                          <div>
 
                                   <div className='flex flex-row'>
-                                      <span className='dm-sans lg:font-medium block'>vorsichtig</span>,&nbsp;
-                                      <span className='dm-sans lg:font-medium block'>achtsam</span>,&nbsp;
-                                      <span className='dm-sans lg:font-medium block'>argwöhnisch</span>                            
+                                      <span className='dm-sans text-xl  block'>vorsichtig</span>,&nbsp;
+                                      <span className='dm-sans text-xl block'>achtsam</span>,&nbsp;
+                                      <span className='dm-sans text-xl  block'>argwöhnisch</span>                            
                                   </div>
                                   <input className='dm-sans  hidden' value={"vorsichtig, achtsam, argwöhnisch"}></input>
                                   <PencilIcon className="w-10 pencilBtn bold-color bold-border-color" />         
