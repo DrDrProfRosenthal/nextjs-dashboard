@@ -300,8 +300,8 @@ input:focus{
 .popupForm{
   margin: 0 5%;
 
-
-  height: 50%;
+  margin-top: 20%;
+  /*height: 50%;*/
   width: 80% !important;
 
   transform: translate(0%, -10%);
