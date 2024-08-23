@@ -20,15 +20,6 @@ export default async function RevenueChart({
   const dataOne = revenue;
   
 
- const { yAxisLabels, topLabel } = generateYAxis(revenue);
-
-
-   if (!revenue || revenue.length === 0) {
-     return <p className="mt-4 text-gray-400">No data available.</p>;
-   }
-
-   console.log(revenue)
-   console.log(revenue[0])
   
 
   return (
@@ -37,12 +28,7 @@ export default async function RevenueChart({
    
         
 
-            
-            {yAxisLabels.map((label) => (
-              <p key={label}>{label}</p>
-            ))}
-      
-
+       
           
       
        
