@@ -30,7 +30,7 @@ export default async function VocabsData({
             return (
                             
                 <p>
-                  {engvocabs.engVocab}
+                  {engvocabs.isVerb}
                 </p>
             )})}
 
