@@ -26,6 +26,14 @@ export default async function VocabsData({
 
         <div >
     
+        {vocabs.map((data) => {
+            return (
+                            
+                <p>
+                  {data.engvocab}
+                </p>
+            )})}
+
 
         
 
