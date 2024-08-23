@@ -11,10 +11,12 @@ export default async function VocabsData({
 }) {
 
 
-  
 
+  console.log(vocabs)
+  const data2 = "dsgfs"
+  console.log("data")
+  console.log(typeof vocabs);
 
-   console.log(vocabs)
 
 
   return (
@@ -23,14 +25,17 @@ export default async function VocabsData({
     <div className="w-full md:col-span-4">
       vocabs.tsx in /ui/dashboard
 
-
+  
         <div >
     
         {vocabs.map((engvocabs) => {
             return (
                             
                 <p>
+
+                  {"engvocabs.isVerb"}
                   {engvocabs.isVerb}
+                  {data2}
                 </p>
             )})}
 
