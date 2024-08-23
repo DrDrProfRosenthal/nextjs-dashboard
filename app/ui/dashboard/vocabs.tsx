@@ -21,16 +21,16 @@ export default async function VocabsData({
 
    <>
     <div className="w-full md:col-span-4">
-      
+      vocabs.tsx in /ui/dashboard
 
 
         <div >
     
-        {vocabs.map((data) => {
+        {vocabs.map((engvocabs) => {
             return (
                             
                 <p>
-                  {data.engvocab}
+                  {engvocabs.engVocab}
                 </p>
             )})}
 
