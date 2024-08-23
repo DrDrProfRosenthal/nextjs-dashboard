@@ -3,35 +3,34 @@
 
 import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { fetchCustomers } from '@/app/lib/data';
-import { createInvoice } from '@/app/lib/actions';
+
 import { ArrowLeftIcon, ArrowRightIcon,PencilIcon } from '@heroicons/react/24/outline';
 import Pagination from '@/app/ui/addVocabs/pagination';
-import Hamburger from '@/app/ui/addVocabs/hamburger';
 
-import RevenueChart from '@/app/ui/dashboard/revenue-chart';
-import { fetchRevenue, fetchLatestInvoices, fetchCardData, } from '@/app/lib/data';
+import Hamburger from '@/app/ui/addVocabs/hamburger';
+import VocabsData from '@/app/ui/dashboard/vocabs';
+import { fetchVocabs } from '@/app/lib/data';
 
 export default async function Page() {
  // const customers = await fetchCustomers();
 
- const totalPages = 2;
 
- const revenue = await fetchRevenue();
+ const vocabs = await fetchVocabs();
 
   return (
-
 
 
       
    <main className='background-color light-color'>
 
- 
+    <VocabsData vocabs = {vocabs} />
+
 
       <div className="center-container">
         <div className="prompt-container bold-border-color ">
             
 
-        <RevenueChart revenue={revenue}  /> 
+           
 
 
               <div className="vocab-con my-4">

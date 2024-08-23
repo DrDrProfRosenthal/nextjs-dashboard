@@ -130,18 +130,12 @@ const invoices = [
 ];
 
 const revenue = [
-  { month: 'Jan', revenue: 2000 },
-  { month: 'Feb', revenue: 1800 },
-  { month: 'Mar', revenue: 2200 },
-  { month: 'Apr', revenue: 2500 },
-  { month: 'May', revenue: 2300 },
-  { month: 'Jun', revenue: 3200 },
-  { month: 'Jul', revenue: 3500 },
-  { month: 'Aug', revenue: 3700 },
-  { month: 'Sep', revenue: 2500 },
-  { month: 'Oct', revenue: 2800 },
-  { month: 'Nov', revenue: 3000 },
-  { month: 'Dec', revenue: 4800 },
+  { engVocab: 'Jan', gerVocab: "2000",engExample: "2000",gerExample: "20050",isVerb: "true" },
+  { engVocab: 'Feb', gerVocab: "400",engExample: "25",gerExample: "20010",isVerb: "false" },
+  { engVocab: 'Mar',gerVocab: "500",engExample: "2002350",gerExample: "21000",isVerb: "true" },
+  { engVocab: 'Apr', gerVocab: "88000",engExample: "230200",gerExample: "20300",isVerb: "false" },
+  { engVocab: 'May', gerVocab: "999",engExample: "2057800",gerExample: "20300",isVerb: "true" },
+
 ];
 
 export { users, customers, invoices, revenue };

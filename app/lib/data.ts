@@ -6,6 +6,7 @@ import {
   InvoicesTable,
   LatestInvoiceRaw,
   Revenue,
+  Vocabs,
 } from './definitions';
 import { formatCurrency } from './utils';
 
@@ -26,6 +27,24 @@ export async function fetchRevenue() {
     throw new Error('Failed to fetch revenue data.');
   }
 }
+
+export async function fetchVocabs(){
+  try {
+  
+    const data = await sql<Vocabs>`SELECT * FROM vocabs`;
+
+    console.log('Data fetch completed after 3 seconds.');
+
+    return data.rows;
+  } catch (error) {
+
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch vocab data.');
+  }
+
+}
+
+
 
 export async function fetchLatestInvoices() {
   try {

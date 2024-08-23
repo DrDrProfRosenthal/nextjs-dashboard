@@ -26,6 +26,22 @@ export type Invoice = {
   status: 'pending' | 'paid';
 };
 
+
+export type Vocabs = {
+       engVocab: string;
+       gerVocab: string;
+       engExample: string;
+       gerExample: string;
+       isVerb: string;
+}
+
+
+export type lingueeData = {
+  gerTranslation: string;
+  engExample: string;
+  gerExample: string;
+}
+
 export type Revenue = {
   month: string;
   revenue: number;
