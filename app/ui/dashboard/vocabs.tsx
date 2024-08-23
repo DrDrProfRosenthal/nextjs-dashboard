@@ -18,6 +18,10 @@ export default async function VocabsData({
   console.log(typeof vocabs);
 
 
+  if (!vocabs || vocabs.length === 0) {
+    return <p className="mt-4 text-gray-400">No data available.</p>;
+  }
+
 
   return (
 
@@ -28,16 +32,12 @@ export default async function VocabsData({
   
         <div >
     
-        {vocabs.map((engvocabs) => {
-            return (
-                            
-                <p>
-
-                  {"engvocabs.isVerb"}
-                  {engvocabs.isVerb}
-                  {data2}
-                </p>
-            )})}
+        {vocabs.map((data) => (
+              <p className="-rotate-90 text-sm text-gray-400 sm:rotate-0">
+                {data.engvocab}
+              </p>
+        
+          ))}
 
 
         

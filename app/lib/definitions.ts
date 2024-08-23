@@ -28,11 +28,11 @@ export type Invoice = {
 
 
 export type Vocabs = {
-       engVocab: string;
-       gerVocab: string;
-       engExample: string;
-       gerExample: string;
-       isVerb: string;
+       engvocab: string;
+       gervocab: string;
+       engexample: string;
+       gerexample: string;
+       isverb: string;
 }
 
 
