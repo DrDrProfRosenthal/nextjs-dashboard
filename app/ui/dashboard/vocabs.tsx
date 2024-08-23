@@ -27,13 +27,7 @@ export default async function VocabsData({
         <div >
     
 
-          {vocabs.map((data) => {
-            return (
-                            
-                <p>
-                  {data.engVocab}
-                </p>
-            )})}
+        
 
             </div>
 
@@ -50,6 +44,19 @@ export default async function VocabsData({
 
 
 /*
+
+  {vocabs.map((data) => {
+            return (
+                            
+                <p>
+                  {data.engVocab}
+                </p>
+            )})}
+
+
+
+
+
 
  const result = vocabs.find(item => item.engvocab === 'Feb').engvocab;
 console.log(result);
