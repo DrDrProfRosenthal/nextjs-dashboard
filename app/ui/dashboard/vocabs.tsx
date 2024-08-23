@@ -31,7 +31,7 @@ export default async function VocabsData({
             return (
                             
                 <p>
-                  {data.engvocab}
+                  {data.engVocab}
                 </p>
             )})}
 
