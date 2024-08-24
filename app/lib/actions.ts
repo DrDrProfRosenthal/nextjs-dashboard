@@ -21,6 +21,8 @@ console.log(formData)
   };
 
 
+
+
   const { engVocab, gerVocab, engExample,gerExample } ={
     engVocab: formData.get('engVocab'),
     gerVocab: formData.get('gerVocab'),
@@ -29,11 +31,16 @@ console.log(formData)
   };
     
 
+  const engVocab2 = "preasie";
+  const engVocab3 = "preasie";
+  const engVocab4 = "preasie";
+  const engVocab5 = "preasie";
+
 
     try {
       await sql`
         INSERT INTO vocabs (engvocab, gervocab, engexample, gerexample)
-        VALUES (${engVocab}, ${gerVocab}, ${engExample}, ${gerExample})
+        VALUES (${engVocab2}, ${engVocab3}, ${engVocab4}, ${engVocab5})
       `;
       console.log("entry2 done");
       //console.log(engVocab + gerVocab + engExample + gerExample);
