@@ -1,32 +1,18 @@
-
-
-
 console.log("train js")
-
-
-
-// document.getElementById("myBtn").focus();
-
 var vocabList = [];
 var currentIndex = 0;
-
 var vocabObject = document.querySelector('#object').innerHTML;
-
-console.log(vocabObject)
-
 var vocabArray = JSON.parse(vocabObject);
-
-console.log(vocabArray.length)
-
-console.log(vocabArray[1].engvocab) // first thing
 
 function displayNextVocab() {
         if(vocabArray[currentIndex].engvocab != "error999" && currentIndex < vocabArray.length){//sind noch Vokabeln da, schreib die nächste hin  
-            console.log(vocabArray[currentIndex].engvocab)
-            document.getElementById("current-vocab").textContent  = vocabArray[currentIndex].gervocab;   
-            document.querySelector('#german-example').textContent = vocabArray[currentIndex].engexample;
-            document.querySelector('.english-example').textContent = vocabArray[currentIndex].gerexample;
-
+           
+           
+            
+            document.getElementById("current-vocab").textContent  = vocabArray[currentIndex].gervocab;
+            displayGerExample(String(vocabArray[currentIndex].gerexample),String(vocabArray[currentIndex].gervocab));
+            displayEngExample();
+        
         } else { // sind keine Vokabeln mehr da, fang von vorne an
             currentIndex = 0;
             alert('Congratulations! You have completed the vocabulary list.');
@@ -37,16 +23,16 @@ function displayNextVocab() {
     displayNextVocab();
  
 
-    document.querySelector('#myBtn').addEventListener('click', () => {
+document.querySelector('#myBtn').addEventListener('click', () => {
         const input = document.querySelector('#inputVocab');
        
         if (input.value.trim().toLowerCase() === vocabArray[currentIndex].engvocab.toLowerCase()) {
             input.value = '';       
             if(currentIndex <  vocabArray.length - 1){
                 currentIndex++;
-                console.log(currentIndex)
+                
             }else{
-                console.log(currentIndex)
+                
                 currentIndex = 0;          
             }
             
@@ -57,7 +43,7 @@ function displayNextVocab() {
             input.value = '';
             alert('Incorrect! Try again.');
         }
-    });
+});
 
     
 
@@ -65,14 +51,115 @@ function displayNextVocab() {
     
             
 
-            document.querySelector('#hintBtn').addEventListener('click', () => {
-                revealObj(document.querySelector('#englishVocab'));
+document.querySelector('#hintBtn').addEventListener('click', () => {
+                revealObj(document.querySelector('#engEx2'));
                 hideObj(document.querySelector('#hintBtn'));
-                hideObj(document.querySelector('#englishVocabPlaceholder'));
-            });
-            
-   
+                hideObj(document.querySelector('#vocabCover'));
+});
 
+function displayEngExample(){
+                const sentence = String(vocabArray[currentIndex].engexample);
+                const wordToFind = String(vocabArray[currentIndex].engvocab);                
+                const [part1, part2, part3] = splitSentence(sentence, wordToFind);
+                document.querySelector("#engEx1").textContent  = part1;
+                document.querySelector("#engEx2").textContent  = " "+part2+" ";
+                document.querySelector("#engEx3").textContent  = part3;
+}
+
+
+function displayGerExample(sentence, wordToFind){
+                const [part1, part2, part3] = searchGerExample(sentence,wordToFind);                 
+                console.log(part1);
+                console.log(part2);
+                console.log(part3);
+               
+                document.querySelector("#gerEx1").textContent  = part1;
+                document.querySelector("#gerEx2").textContent  = " "+part2+" ";
+                document.querySelector("#gerEx3").textContent  = part3; 
+}
+
+
+function searchGerExample(sentence,wordToFind){
+    
+    console.log("sentence" + sentence) //Wenn ich online mit Kreditkarte bezahle, bin ich immer vorsichtig.
+    console.log("word to find" + wordToFind) // vorischt, achtsam
+
+var result = result = splitSentence(sentence, wordToFind);
+
+
+let a = sentence.indexOf(wordToFind); console.log(sentence.indexOf(wordToFind))
+if (a !== -1) {   
+    result = splitSentence(sentence, wordToFind);
+}
+
+let wordsArray = splitWords(wordToFind); console.log(wordsArray)
+
+wordsArray.forEach(e => {              
+    let b = sentence.indexOf(e.toString());  console.log(b)    
+    if (b !== -1) { 
+        result = splitSentence(sentence, e.toString()); console.log(splitWords(wordToFind));
+    }
+    }); 
+
+
+wordsArray = splitWords2(wordToFind);    
+wordsArray.forEach(e => {              
+    let b = sentence.indexOf(e.toString());  console.log(b)       
+    if (b !== -1) { 
+        result = splitSentence(sentence, e.toString());
+    }
+}); 
+
+    
+wordsArray = splitWords3(wordToFind);    
+wordsArray.forEach(e => {              
+    let b = sentence.indexOf(e.toString());       console.log(b)   
+    if (b !== -1) { 
+        result = splitSentence(sentence, e.toString());
+    }
+}); 
+
+
+
+
+
+
+
+    console.log("result"+result)
+    return result;
+}
+
+
+
+function splitWords(input) {
+    const wordsArray = input.split(', ');  
+    return wordsArray;
+}
+
+function splitWords2(input) {
+    const wordsArray = input.split(',');  
+    return wordsArray;
+}
+
+  function splitWords3(input) {   
+    const wordsArray = input.split(' , ');  
+    return wordsArray;
+  }
+
+
+
+function splitSentence(sentence, word) {     // looks for word / looks if it fits in the sentence
+        const index = sentence.indexOf(word);      
+        if (index === -1) {
+            console.log("No word found")           
+            return [sentence, ' ', ' '];       
+        }     
+        const part1 = sentence.substring(0, index).trim(); // Part before the word
+        const part2 = word; // The word itself
+        const part3 = sentence.substring(index + word.length).trim(); // Part after the word
+        return [part1, part2, part3];
+}
+      
 
 
 function revealObj(e){ //but keep all attributes
@@ -83,5 +170,5 @@ function revealObj(e){ //but keep all attributes
 
   function hideObj(e){
       e.setAttribute("class", "hidden");
-   }
+}
 

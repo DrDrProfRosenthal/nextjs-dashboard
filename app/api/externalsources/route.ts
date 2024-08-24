@@ -5,7 +5,10 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   try {
     // Fetch data from the external API
-    const response = await fetch('https://linguee-api.fly.dev/api/v2/translations?query=wary&src=en&dst=de&guess_direction=false&follow_corrections=on_empty_translations');
+
+    var url = 'https://linguee-api.fly.dev/api/v2/translations?query=wary&src=en&dst=de&guess_direction=false&follow_corrections=on_empty_translations'
+
+    const response = await fetch(url);
 
     // Check if the response is OK (status 200-299)
     if (!response.ok) {

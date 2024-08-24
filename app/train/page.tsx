@@ -41,9 +41,9 @@ export default async function Page() {
                 <span className="current-vocab dm-sans text-4xl bold-color font-semibold" id="current-vocab">vorsichtig, achtsam, argwöhnisch  </span>
 
                   <div className='german-examplecontainer montserrat italic text-base' >
-                    <span className="english-example light-color font-medium" id="german-example"> "bleibt zwar weiter
-                      <span className='germanExampleVocab counter-color font-medium'>&nbsp;vorsichtig&nbsp;</span>        
-                      und kritisch, stellt jedoch fest, dass ein Pilotprojekt den Mitgliedstaaten dabei helfen [...]"</span>
+                    <span id="gerEx1" className="english-example light-color font-medium"> "bleibt zwar weiter </span>
+                      <span id="gerEx2" className='germanExampleVocab counter-color font-medium' >&nbsp;vorsichtig&nbsp;</span>        
+                     <span id="gerEx3"> und kritisch, stellt jedoch fest, dass ein Pilotprojekt den Mitgliedstaaten dabei helfen [...]"</span>
                   </div>                
               </div>
                
@@ -59,14 +59,18 @@ export default async function Page() {
 
                         <div id='hintContainer' className='flex-container text-base'>
 
-                            <span className='english-example montserrat italic light-color font-medium'> 
-                              "Notes, while remaining 
-                              <span id="englishVocabPlaceholder" className='englishExampleVocab counter-color font-medium'>&nbsp;_____&nbsp;</span>
-                              <span id="englishVocab" className='font-medium counter-color englishVocab englishExampleVocab counter-color hidden'>&nbsp;wary&nbsp;</span>        
-                              and critical, that
-                              a pilot project may help Member States better to understand the inherent [...]" 
+                          <span>
+                            <span id="engEx1"className='english-example montserrat italic light-color font-medium'> 
+                              
                             </span>
-
+                              <span id="vocabCover" className='englishExampleVocab counter-color font-medium'>&nbsp;_____&nbsp;</span>
+                              <span id="engEx2" className='font-medium counter-color englishVocab englishExampleVocab counter-color hidden'>&nbsp;wary&nbsp;</span>        
+                   
+                             
+                            <span id="engEx3"className='english-example montserrat italic light-color font-medium'> 
+                              
+                            </span>
+                            </span>
                            
                             <div>
                               <button className='font-semibold  bold-color text-lg montserrat italic bold-border-color'  id="hintBtn">Reveal hint </button>
