@@ -5,58 +5,50 @@ import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation'; 
 
-const FormSchema = z.object({
-  engVocab: z.string(),
-  gerVocab: z.string(),
-  engExample: z.string(),
-  gerExample: z.string(),
-  isVerb: z.string(),
-});
- 
-
-// const CreateEntry = FormSchema.omit({ id: true, date: true });
-
-export async function createVocabEntry(vocabData: FormData) {
-  console.log(vocabData)
-  console.log(vocabData.get('engVocab'))
-
-    const { engVocab, gerVocab, engExample,gerExample,isVerb } = {
-      engVocab: vocabData.get('engVocab'),
-      gerVocab: vocabData.get('gerVocab'),
-      engExample: vocabData.get('engExample'),
-      gerExample: vocabData.get('gerExample'),
-      isVerb: vocabData.get('isVerb'),  };
 
 
+
+
+export async function createInvoice(formData: FormData) {
+
+console.log(formData)
+    
+  const { customerId, amount,newVocab, status } = {
+    customerId: "cc27c14a-0acf-4f4a-a6c9-d45682c144b9", // formData.get('customerId'),
+    amount: "13255", // formData.get('amount'),
+    newVocab: formData.get('engVocab'),
+    status: "pending", // formData.get('status'),
+  };
+
+
+  const { engVocab, gerVocab, engExample,gerExample } ={
+    engVocab: formData.get('engVocab'),
+    gerVocab: formData.get('gerVocab'),
+    engExample: formData.get('engExample'),
+    gerExample: formData.get('gerExample'),
+  };
     
 
+
     try {
-        await sql`
-          INSERT INTO vocabs (engVocab, gerVocab, engExample, gerExample, isVerb)
-          VALUES (${"engVocabVar"}, 
-          ${"gerVocabVar"},
-           ${"engExampleVar"},
-            ${"gerExampleVar"},
-            ${"isVerbVar"})
-        `;
-      } catch (error) {
-        return {
-          message: 'Database Error: Failed to Create Invoice.',
-        };
-      }
+      await sql`
+        INSERT INTO vocabs (engvocab, gervocab, engexample, gerexample)
+        VALUES (${engVocab}, ${gerVocab}, ${engExample}, ${gerExample})
+      `;
+      console.log("entry2 done");
+      //console.log(engVocab + gerVocab + engExample + gerExample);
 
-        console.log("finished")
-  revalidatePath('/dashboard/invoices');
-  redirect('/dashboard/invoices');
-  }
+    } catch (error) {
+      return {
+        message: 'Database Error: Failed to vocab Entry.',
+      };
+    }
 
+   
 
-  /*
+  
 
-    const engVocabVar = vocabData.get('engVocab')?.toString();
-      const gerVocabVar = vocabData.get('gerVocab')?.toString(); 
-      const engExampleVar = vocabData.get('engExample')?.toString();
-      const gerExampleVar = vocabData.get('gerExample')?.toString();
-      const isVerbVar = vocabData.get('isVerb')?.toString();
+revalidatePath('/addVocabs');
+redirect('/addVocabs');
+}
 
-  */

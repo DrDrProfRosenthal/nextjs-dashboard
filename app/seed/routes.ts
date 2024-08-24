@@ -8,20 +8,19 @@ import bcrypt from 'bcrypt';
 
 
 
- async function insertVocabData(engVocab:string,gerVocab:string,engExample:string,gerExample:string,isVerb:boolean) {
+ async function insertVocabData(engVocab:string,gerVocab:string,engExample:string,gerExample:string) {
   await client.sql`
     CREATE TABLE IF NOT EXISTS vocabs (
-      engVocab VARCHAR(255) NOT NULL,
-      gerVocab VARCHAR(255) NOT NULL,
-      engExample VARCHAR(255) NOT NULL,
-      gerExample VARCHAR(255) NOT NULL,
-      isVerb BOOLEAN
+      engVocab VARCHAR(255) NOT NULL UNIQUE,
+      gerVocab VARCHAR(255) NOT NULL UNIQUE,
+      engExample VARCHAR(255) NOT NULL UNIQUE,
+      gerExample VARCHAR(255) NOT NULL UNIQUE,
     );
   `;
 
    
-     client.sql`INSERT INTO vocabs (engVocab, gerVocab, engExample, gerExample, isVerb)
-        VALUES (${engVocab}, ${gerVocab}, ${engExample}, ${gerExample}, ${isVerb} );         
+     client.sql`INSERT INTO vocabs (engVocab, gerVocab, engExample, gerExample)
+        VALUES (${engVocab}, ${gerVocab}, ${engExample}, ${gerExample});         
       `;
   
 }
@@ -32,19 +31,18 @@ import bcrypt from 'bcrypt';
  async function seedRevenue() {
    await client.sql`
      CREATE TABLE IF NOT EXISTS vocabs (
-       engVocab VARCHAR(255) NOT NULL,
-       gerVocab VARCHAR(255) NOT NULL,
-       engExample VARCHAR(255) NOT NULL,
-       gerExample VARCHAR(255) NOT NULL,
-       isVerb CHAR(5) NOT NULL
+      engVocab VARCHAR(255) NOT NULL,
+      gerVocab VARCHAR(255) NOT NULL,
+      engExample VARCHAR(255) NOT NULL,
+      gerExample VARCHAR(255) NOT NULL,
      );
    `;
 
    const insertedRevenue = await Promise.all(
      revenue.map(
        (rev) => client.sql`
-          INSERT INTO vocabs (engVocab, gerVocab, engExample, gerExample, isVerb)
-         VALUES (${rev.engVocab}, ${rev.gerVocab}, ${rev.engExample}, ${rev.gerExample}, ${rev.isVerb} );         
+          INSERT INTO vocabs (engVocab, gerVocab, engExample, gerExample)
+         VALUES (${rev.engVocab}, ${rev.gerVocab}, ${rev.engExample}, ${rev.gerExample});         
        `,
      ),
    );
@@ -56,7 +54,7 @@ import bcrypt from 'bcrypt';
  export async function GET() {
    try {
      await client.sql`BEGIN`;
-    await insertVocabData("engVocab","gerVocab","engExample","gerExample", false);
+    await insertVocabData("engVocab","gerVocab","engExample","gerExample");
 
      await seedRevenue();
 
