@@ -50,7 +50,7 @@ export default async function Page() {
              
               <div className='align-center vocab-con '>
                     <span className='verbBox font-semibold text-4xl bold-color dm-sans m0'>(to)</span>
-                    <input id="inputVocab" type="text" className="font-semibold vocab-input text-2xl bold-color bold-border-color my-4" placeholder="..." />
+                    <input id="inputVocab" type="text" className="font-semibold vocab-input text-2xl bold-color bold-border-color my-4" placeholder="..." required/>
                     <button  className="btn text-2xl font-semibold bold-color bold-border-color" id="myBtn" type="submit">Check!</button>
               </div>
 
