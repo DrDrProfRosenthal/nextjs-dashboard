@@ -1,42 +1,32 @@
 
+
+
 console.log("train js")
+
+
 
 // document.getElementById("myBtn").focus();
 
 var vocabList = [];
 var currentIndex = 0;
 
+var vocabObject = document.querySelector('#object').innerHTML;
 
-/*
-    
-fetch('vocabs.csv')
-        .then(response => response.text())
-        .then(data => {
-            vocabList = parseCSV(data);           
-            if (vocabList.length > 0) {
-                displayNextVocab();
-            }
-        })
-        .catch(error => console.error('Error loading CSV:', error));
+console.log(vocabObject)
 
- function parseCSV(data) {
-        const lines = data.split('\n');
-                return lines.map( (line) => {                    
-                try {
-                    var parts = line.split(';');   
-                    return { english: parts[0].trim(), german: parts[1].trim() }; 
-                }catch{
-                   return {english:"error999"}
-                }
-          
-        });   
-        }    
+var vocabArray = JSON.parse(vocabObject);
 
+console.log(vocabArray.length)
+
+console.log(vocabArray[1].engvocab) // first thing
 
 function displayNextVocab() {
-        if(vocabList[currentIndex].english != "error999" && currentIndex < vocabList.length){//sind noch Vokabeln da, schreib die nächste hin  
-            console.log(vocabList[currentIndex].english)
-            document.getElementById("current-vocab").textContent  = vocabList[currentIndex].german;             
+        if(vocabArray[currentIndex].engvocab != "error999" && currentIndex < vocabArray.length){//sind noch Vokabeln da, schreib die nächste hin  
+            console.log(vocabArray[currentIndex].engvocab)
+            document.getElementById("current-vocab").textContent  = vocabArray[currentIndex].gervocab;   
+            document.querySelector('#german-example').textContent = vocabArray[currentIndex].engexample;
+            document.querySelector('.english-example').textContent = vocabArray[currentIndex].gerexample;
+
         } else { // sind keine Vokabeln mehr da, fang von vorne an
             currentIndex = 0;
             alert('Congratulations! You have completed the vocabulary list.');
@@ -44,14 +34,25 @@ function displayNextVocab() {
         }
     }
 
+    displayNextVocab();
+ 
 
     document.querySelector('#myBtn').addEventListener('click', () => {
-        const input = document.querySelector('.centered-input');
+        const input = document.querySelector('#inputVocab');
        
-        if (input.value.trim().toLowerCase() === vocabList[currentIndex].english.toLowerCase()) {
-            input.value = '';
-            currentIndex++;
+        if (input.value.trim().toLowerCase() === vocabArray[currentIndex].engvocab.toLowerCase()) {
+            input.value = '';       
+            if(currentIndex <  vocabArray.length - 1){
+                currentIndex++;
+                console.log(currentIndex)
+            }else{
+                console.log(currentIndex)
+                currentIndex = 0;          
+            }
+            
             displayNextVocab();
+
+
         } else {
             input.value = '';
             alert('Incorrect! Try again.');
@@ -59,20 +60,18 @@ function displayNextVocab() {
     });
 
     
-*/
 
-try{
-    
 
-    document.querySelector('#hintBtn').addEventListener('click', () => {
-        revealObj(document.querySelector('#englishVocab'));
-        hideObj(document.querySelector('#hintBtn'));
-        hideObj(document.querySelector('#englishVocabPlaceholder'));
     
-    });
-}catch(err){
-    console.lgo
-}
+            
+
+            document.querySelector('#hintBtn').addEventListener('click', () => {
+                revealObj(document.querySelector('#englishVocab'));
+                hideObj(document.querySelector('#hintBtn'));
+                hideObj(document.querySelector('#englishVocabPlaceholder'));
+            });
+            
+   
 
 
 
@@ -85,12 +84,4 @@ function revealObj(e){ //but keep all attributes
   function hideObj(e){
       e.setAttribute("class", "hidden");
    }
-
-
-
-
-
-
- 
-
 

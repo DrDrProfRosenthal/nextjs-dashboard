@@ -1,8 +1,11 @@
+'use client';
+
 import { generateYAxis } from '@/app/lib/utils';
 import { CalendarIcon } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
 import { Vocabs } from '@/app/lib/definitions';
 
+import React from 'react';
 
 export default async function VocabsData({
   vocabs,
@@ -13,9 +16,7 @@ export default async function VocabsData({
 
 
   console.log(vocabs)
-  const data2 = "dsgfs"
-  console.log("data")
-  console.log(typeof vocabs);
+
 
 
   if (!vocabs || vocabs.length === 0) {
@@ -23,40 +24,19 @@ export default async function VocabsData({
   }
 
 
+
   return (
 
    <>
-    <div className="w-full md:col-span-4">
-      vocabs.tsx in /ui/dashboard
-
-  
-        <div >
-    
-        {vocabs.map((data) => (
-              <p className="-rotate-90 text-sm text-gray-400 sm:rotate-0">
-                {data.engvocab}
-              </p>
-        
-          ))}
-
-
-        
-
-            </div>
-
-
-
-   </div>
-
-
-   
-
-
-
+    <p id="object" className='hidden'>{JSON.stringify(vocabs)}</p>
    </>
   );
 
 }
+
+
+
+
 
 
 /*
