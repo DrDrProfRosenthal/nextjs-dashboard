@@ -24,23 +24,19 @@ console.log(formData)
 
 
   const { engVocab, gerVocab, engExample,gerExample } ={
-    engVocab: formData.get('engVocab'),
-    gerVocab: formData.get('gerVocab'),
-    engExample: formData.get('engExample'),
-    gerExample: formData.get('gerExample'),
+    engVocab: formData.get('engVocab') as string,
+    gerVocab: formData.get('gerVocab') as string,
+    engExample: formData.get('engExample') as string,
+    gerExample: formData.get('gerExample') as string,
   };
     
-
-  const engVocab2 = "preasie";
-  const engVocab3 = "preasie";
-  const engVocab4 = "preasie";
-  const engVocab5 = "preasie";
+  
 
 
     try {
       await sql`
         INSERT INTO vocabs (engvocab, gervocab, engexample, gerexample)
-        VALUES (${engVocab2}, ${engVocab3}, ${engVocab4}, ${engVocab5})
+        VALUES (${engVocab}, ${gerVocab}, ${engExample}, ${gerExample})
       `;
       console.log("entry2 done");
       //console.log(engVocab + gerVocab + engExample + gerExample);
