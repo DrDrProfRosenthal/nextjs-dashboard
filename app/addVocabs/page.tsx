@@ -22,7 +22,7 @@ const handleSearch = async (params:string) => {
   const formattedData  = JSON.stringify(data, null, 2);
  console.log(formattedData);
 
- setLingueeData(formattedData);
+ setLingueeData(lingueeData);
 }
 
 
