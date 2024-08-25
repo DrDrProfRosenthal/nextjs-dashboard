@@ -16,25 +16,24 @@ export async function fetchLingue(word: string){
   // url = 'https://linguee-api.fly.dev/api/v2/translations?query=assessment&src=en&dst=de&guess_direction=false&follow_corrections=on_empty_translations'
    
   
-
-var url = 'https://linguee-api.fly.dev/api/v2/translations?query='+ word.toString() + '&src=en&dst=de&guess_direction=false&follow_corrections=on_empty_translations';
-
+const url = `https://linguee-api.fly.dev/api/v2/translations?query=${encodeURIComponent(word)}&src=en&dst=de&guess_direction=false&follow_corrections=on_empty_translations`;
     console.log(url)
 
-     const res = await fetch(url , {next: {revalidate:1}}).catch(console.error);   
+
+    try {
+     const res = await fetch(url , {next: {revalidate:1}}).catch(console.error); 
+
+     
    //  console.log(res)
-     try {
-       return await res.json();
+ 
+       
+       if(res != undefined){
+        return await res.json(); 
+       }
        
      } catch (error) {
       return "No entry found";
-
      } 
-   
-
-     
-    
-
 }
 
 
