@@ -24,8 +24,7 @@ var url = 'https://linguee-api.fly.dev/api/v2/translations?query='+ word.toStrin
      const res = await fetch(url , {next: {revalidate:1}}).catch(console.error);   
    //  console.log(res)
      try {
-       return res.json();
-       
+       return res;       
      } catch (error) {
       return "No entry found";
 
