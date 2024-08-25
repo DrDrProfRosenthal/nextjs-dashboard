@@ -1,6 +1,7 @@
 "use server";
 
 import { NextResponse } from 'next/server';
+import { object } from 'zod';
 
 export async function GET() {
   try {
@@ -17,9 +18,10 @@ export async function GET() {
 
     // Parse the response as JSON
     const data = await response.json();
-
     // Return the fetched data as JSON
     return NextResponse.json(data);
+
+    
   } catch (error) {
     console.error('Error fetching data:', error);
 

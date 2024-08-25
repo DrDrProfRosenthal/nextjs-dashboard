@@ -1,150 +1,59 @@
 
-
-
-import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
-import { fetchCustomers } from '@/app/lib/data';
-
-import { ArrowLeftIcon, ArrowRightIcon,PencilIcon } from '@heroicons/react/24/outline';
-import Pagination from '@/app/ui/addVocabs/pagination';
+'use client';
+import { useState } from 'react';
 import Hamburger from '@/app/ui/addVocabs/hamburger';
-
 import AddVocabForm from '@/app/ui/addVocabs/createVocabEntry';
+import { fetchLingue } from '@/app/lib/actions'
+import { useDebouncedCallback } from 'use-debounce';
+
+import { ReactElement, JSXElementConstructor, ReactNode, AwaitedReactNode } from 'react';
+import { string } from 'zod';
+
+   
 
 
 
-import { CustomerField, lingueeData, Vocabs } from '@/app/lib/definitions';
-export default async function Page() {
- // const customers = await fetchCustomers();
+export default function Page() {  
+const [lingueeData, setLingueeData] = useState(null);
 
- const totalPages = 2;
+const handleSearch = async (params:string) => {
+  console.log(params)
+  const data = await fetchLingue(params.toString());  
+  const formattedData  = JSON.stringify(data, null, 2);
+ console.log(formattedData);
 
- const lingueeData = [
- { gerTranslation:"kommt noch", 
-  engExample: "lingueeData", 
-  gerExample:"lingueeData" }
- ];
-
-
-
-  return (
+ setLingueeData(formattedData);
+}
 
 
 
-      
+return (      
    <main className='background-color light-color'>
 
+    <div>
+      <p>abc</p>
+
+      <input
+        className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+        placeholder="{placeholder}"
+        onChange={(e) => {
+          handleSearch(e.target.value);
+        }} 
+      />
+
+      <pre>{lingueeData}</pre>
+
+
+   
+
+    </div>
+  
+
     <Hamburger />
-
-
-    <AddVocabForm />          
-              
+    <AddVocabForm data={lingueeData} />         
+         
       
 
     </main>
   );
 }
-
-
-
-  
-
-/*    
-    <AddVocabForm lingueeData={lingueeData}/>         
-
-
-
-
- <div className='addVocabCon background-color bold-color'>
-
-          
-        <div className='popupForm lg:text-base popupForm'>  
-
-               
-                                         
-             <div className='flex flex-col'>
-               <span className='dm-sans text-2xl '>Input new words...</span>
-              
-             </div>                                
-
-             <form action={createVocabEntry} >   
-                     
-                
-
-             <div className='addVocabCon background-color bold-color'>
-
-          
-              <div className='popupForm lg:text-base popupForm'>  
-
-               
-                                         
-             <div className='flex flex-col'>
-               <span className='dm-sans text-2xl '>Input new words...</span>
-              
-             </div>                                
-
-                                   
-               <div className='vocabInputField'>
-                  <form >   
-                     <div className='popUpSection'>
-                         <div>
-                           <input className='dm-sans text-4xl' value={"wary"}></input>
-                           <label className='text-base'>Example:&nbsp;</label>
-                           <span className='text-base'>I am always wary when paying online with my credit card.</span>
-                         </div>
-                         <Pagination totalPages={2} />   
-                     </div> 
-                     
-                     <div className='popUpSection'>
-                         <span className='dm-sans text-4xl block'>wary</span>
-                         <div className='inline-flexLG'>
-                                                 <label className='text-base'>Beispiel:&nbsp;</label>
-                                                 <span className='text-base'>Wenn ich online mit Kreditkarte bezahle, bin ich immer vorsichtig.</span>
-                         </div>
-                         <Pagination totalPages={2} />   
-                      </div>   
-
-                   <div className='popUpSection'>
-                      <div className='flex flex-row text-2xl'>
-                         <span className='dm-sans text-2xl block'>vorsichtig, achtsam, argwöhnisch</span>                        
-                       </div>
-                         <input className='dm-sans  hidden' value={"vorsichtig, achtsam, argwöhnisch"}></input>
-                         <PencilIcon className="w-10 pencilBtn bold-color bold-border-color my-3" /> 
-                   </div>
-                         
-                   <div className='align-center my-2'>
-                       <button type='submit' className='bold-color text-4xl montserrat italic bold-border-color hover:bg-gray-100' id="addBtn" >Add vocab </button>
-                   </div>
-
-                   </form>  
-                   <br></br>
-                   <span className='dm-sans text-base block'>Source: Linguee</span>          
-               </div>
-              </div>  
-               
-              </div>
-
-
-
-                   </form> 
-
-
-
-                                   
-               <div className='vocabInputField'>
-                 
-                   <br></br>
-                   <span className='dm-sans text-base block'>Source: Linguee</span>          
-               </div>
-             
-
-
-
-
-             </div>  
-               
-
-
-   </div>
-
-
-*/

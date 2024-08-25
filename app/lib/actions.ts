@@ -9,6 +9,39 @@ import { redirect } from 'next/navigation';
 
 
 
+export async function fetchLingue(word: string){
+
+    // const customers = await fetchCustomers();
+  // var url = 'https://linguee-api.fly.dev/api/v2/translations?query=wary&src=en&dst=de&guess_direction=false&follow_corrections=on_empty_translations'
+  // url = 'https://linguee-api.fly.dev/api/v2/translations?query=assessment&src=en&dst=de&guess_direction=false&follow_corrections=on_empty_translations'
+   
+  
+
+var url = 'https://linguee-api.fly.dev/api/v2/translations?query='+ word.toString() + '&src=en&dst=de&guess_direction=false&follow_corrections=on_empty_translations';
+
+    console.log(url)
+
+     const res = await fetch(url , {next: {revalidate:1}}).catch(console.error);   
+   //  console.log(res)
+     try {
+       return res.json();
+       
+     } catch (error) {
+      return "No entry found";
+
+     } 
+   
+
+     
+    
+
+}
+
+
+
+
+
+
 export async function createInvoice(formData: FormData) {
 
 console.log(formData)
