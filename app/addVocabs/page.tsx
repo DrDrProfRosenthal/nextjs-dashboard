@@ -14,7 +14,7 @@ import { string } from 'zod';
 
 
 export default function Page() {  
-const [lingueeData, setLingueeData] = useState(null);
+  const [lingueeData, setLingueeData] = useState<string | null>(null);
 
 const handleSearch = async (params:string) => {
   console.log(params)
@@ -22,7 +22,7 @@ const handleSearch = async (params:string) => {
   const formattedData  = JSON.stringify(data, null, 2);
  console.log(formattedData);
 
- setLingueeData(lingueeData);
+ setLingueeData(formattedData);
 }
 
 
