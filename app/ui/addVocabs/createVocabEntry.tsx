@@ -112,7 +112,7 @@ return (
                       id="engVocabInput"
                       name="engVocab"
                       type="text"
-                      placeholder="Insert vocab..."
+                      placeholder="Insert vocabulary..."
                       onChange={(e) => {
                         handleSearch(e.target.value);
                       }} 
@@ -128,7 +128,7 @@ return (
                       id="engExample"
                       name="engExample"
                       type="text"
-                      placeholder="Notes, while remaining _____ and critical, that a pilot project may help Member States better to understand the inherent [...]"
+                      placeholder="English examples from Linguee"
                       className="block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                       value={englishInput  ?? ''}                     
                       required />
@@ -159,7 +159,7 @@ return (
                     id="gerExample"
                     name="gerExample"
                     type="text"
-                    placeholder="Wenn ich online mit Kreditkarte bezahle, bin ich immer vorsichtig."
+                    placeholder="Deutsche Beispiele von Linguee..."
                     className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                     value={germanInput ?? ''}
                    required />

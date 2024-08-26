@@ -1,8 +1,8 @@
-// just seed it with clone chapter 11
+
 
 import bcrypt from 'bcrypt';
  import { db } from '@vercel/postgres';
- import { invoices, customers, revenue, users } from '../lib/placeholder-data';
+ // import {  revenue } from '../lib/placeholder-data';
  const client = await db.connect();
 
 
@@ -37,7 +37,7 @@ import bcrypt from 'bcrypt';
       gerExample VARCHAR(255) NOT NULL,
      );
    `;
-
+/*
    const insertedRevenue = await Promise.all(
      revenue.map(
        (rev) => client.sql`
@@ -47,7 +47,7 @@ import bcrypt from 'bcrypt';
      ),
    );
 
-   return insertedRevenue;
+   return insertedRevenue;*/
  }
 
 
