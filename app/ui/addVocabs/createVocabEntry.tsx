@@ -31,9 +31,20 @@ export default function AddVocabForm(data: any) {
   const [germanInput, setGermanInput] = useState<string>('');
 
   const handleSearch = useDebouncedCallback(async (params: string) => {
+
+    try{
+      setCombinedTranslations(combinedTranslations);
+      setEnglishExamples(englishExamples);
+      setEnglishInput('');
+      setGermanInput('');
+      setCombinedTranslations('');
+    }catch{}
+  
+
     try {
       const data = await fetchLingue(params.toString());  
       const parsedData = JSON.parse(JSON.stringify(data)); // Ensure data is an object
+
       const targetWordData = parsedData.find((item: any) => item.text.toLowerCase() === params.toLowerCase());
 
       if (!targetWordData) {
@@ -71,7 +82,7 @@ export default function AddVocabForm(data: any) {
       setGermanExamples(germanExamplesArray);
       setGermanInput(germanExamplesArray[0] || '');
     } catch (error) {
-      console.error('Error fetching data:', error);
+      // console.error('Error fetching data:', error);
     }
   }, 300);
 
