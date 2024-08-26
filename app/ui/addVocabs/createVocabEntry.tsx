@@ -44,28 +44,22 @@ export default function AddVocabForm(data: any) {
       const translations = targetWordData.translations;
 
       const combinedTranslations = translations
-        //.filter((translation: any) => translation.featured) // Optional: Only include featured translations
+       // .filter((translation: any) => translation.featured) // Optional: Only include featured translations
         .map((translation: any) => translation.text)
         .join(', ');
 
       const englishExamples = translations.flatMap((translation: any) =>
         translation.examples
-          .filter((example: any) => example.src) // Filter out examples without source text
+        //  .filter((example: any) => example.src) // Filter out examples without source text
           .map((example: any) => example.src)
-      ).concat([
-        "The quick brown fox jumps over the lazy dog.",
-        "She sells seashells by the seashore."
-      ]); // External English examples
+      )
 
       const germanExamplesArray = translations.flatMap((translation: any) =>
         translation.examples
-          .filter((example: any) => example.dst) // Filter out examples without destination text
+       //   .filter((example: any) => example.dst) // Filter out examples without destination text
           .map((example: any) => example.dst)
-      ).concat([
-        "Der schnelle braune Fuchs springt über den faulen Hund.",
-        "Sie verkauft Muscheln am Meeresufer."
-      ]); // External German examples
-
+      )
+      
       console.log('Combined Translations:', combinedTranslations);
       console.log('English Examples:', englishExamples);
       console.log('German Examples:', germanExamplesArray);
