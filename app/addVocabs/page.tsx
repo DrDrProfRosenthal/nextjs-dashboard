@@ -14,6 +14,9 @@ import { string } from 'zod';
 
 
 export default function Page() {  
+
+
+  /*
   const [lingueeData, setLingueeData] = useState<string | null>(null);
 
 const handleSearch = async (params:string) => {
@@ -24,25 +27,14 @@ const handleSearch = async (params:string) => {
 
  setLingueeData(formattedData);
 }
-
+*/
 
 
 return (      
    <main className='background-color light-color'>
 
     <div>
-      <p>abc</p>
-
-      <input
-        className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
-        placeholder="{placeholder}"
-        onChange={(e) => {
-          handleSearch(e.target.value);
-        }} 
-      />
-
-      <pre>{lingueeData}</pre>
-
+    
 
    
 
@@ -50,7 +42,7 @@ return (
   
 
     <Hamburger />
-    <AddVocabForm data={lingueeData} />         
+    <AddVocabForm />         
          
       
 

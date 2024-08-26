@@ -4,7 +4,6 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 export default function Pagination({ totalPages }: { totalPages: number }) {
 
 
-    console.log(totalPages)
     return(
 
 
@@ -22,7 +21,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
 
          </div>
 
-</div>
+    </div>
 
    
     )
