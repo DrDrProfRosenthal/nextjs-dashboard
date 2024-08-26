@@ -26,18 +26,24 @@ export async function createInvoice(formData: FormData) {
   
  const   engVocab = formData.get('engVocab') as string;
  const   gerVocab = formData.get('gerVocab') as string;
- var   engExample = formData.get('engExample') as string;
+ var  engExample = formData.get('engExample') as string;
  var  gerExample = formData.get('gerExample') as string;
- if (engExample == "" || gerExample == undefined || gerExample == null ){
+ console.log("engExample");
+ console.log( engExample);
+ if (engExample == "" || gerExample == undefined || gerExample == null){
+  console.log("yeah hit")
   engExample = " ";
  }
- if (gerExample == "" || gerExample == undefined || gerExample == null ){
-  gerExample = " ";
+ if (gerExample == "" || gerExample == undefined || gerExample == null){
+  gerExample = "...";
  }
  
 
   
     try {
+      console.log("engExample");
+      console.log( engExample);
+      console.log( gerVocab);
       await sql`
         INSERT INTO vocabs (engvocab, gervocab, engexample, gerexample)
         VALUES (${engVocab}, ${gerVocab}, ${engExample}, ${gerExample})
@@ -45,11 +51,15 @@ export async function createInvoice(formData: FormData) {
       console.log("entry2 done");
 
     } catch (error) {
-      return {
+      console.log(error)
+      return {        
         message: 'Database Error: Failed to vocab Entry.',
       };
+
+
     }
- 
+ console.log("ok kam durch");
+
 revalidatePath('/addVocabs');
 redirect('/addVocabs');
 }
