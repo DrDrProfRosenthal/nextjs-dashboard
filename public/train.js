@@ -1,4 +1,5 @@
-console.log("train js")
+console.log("train js");
+
 var vocabList = [];
 var currentIndex = 0;
 var vocabObject = document.querySelector('#object').innerHTML;
@@ -30,10 +31,7 @@ function displayNextVocab() {
     if(randomOn == true){
         newRandIndex();
     }
-    
-
-
-        if(vocabArray[currentIndex].engvocab != "error999" && currentIndex < vocabArray.length){//sind noch Vokabeln da, schreib die nächste hin
+          if(vocabArray[currentIndex].engvocab != "error999" && currentIndex < vocabArray.length){//sind noch Vokabeln da, schreib die nächste hin
             document.getElementById("current-vocab").textContent  = vocabArray[currentIndex].gervocab;
             displayGerExample(String(vocabArray[currentIndex].gerexample),String(vocabArray[currentIndex].gervocab));
             displayEngExample();
@@ -49,8 +47,10 @@ function displayNextVocab() {
  
 
 document.querySelector('#myBtn').addEventListener('click', () => {
+    console.log("hey")
+    
         const input = document.querySelector('#inputVocab');
-       
+     
         if (input.value.trim().toLowerCase() === vocabArray[currentIndex].engvocab.toLowerCase()) {
             input.value = '';       
             if(currentIndex <  vocabArray.length - 1){
@@ -86,8 +86,9 @@ function displayEngExample(){
                 const sentence = String(vocabArray[currentIndex].engexample);
                 const wordToFind = String(vocabArray[currentIndex].engvocab);                
                 const [part1, part2, part3] = splitSentence(sentence, wordToFind);
+                console.log(part1 +part2 +part3)
                 document.querySelector("#engEx1").textContent  = part1;
-                document.querySelector("#engEx2").textContent  = " "+part2+" ";
+                document.querySelector("#engEx2").textContent  = " "+wordToFind+" ";
                 document.querySelector("#engEx3").textContent  = part3;
 }
 
@@ -132,8 +133,6 @@ wordsArray.forEach(e => {
         result = splitSentence(sentence, e.toString());
     }
 }); 
-
-
     // console.log("result"+result)
     return result;
 }

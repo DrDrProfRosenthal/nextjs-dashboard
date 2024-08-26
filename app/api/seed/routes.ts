@@ -1,4 +1,4 @@
-
+/*
 import { db } from '@vercel/postgres';
 
 const client = await db.connect();
@@ -50,3 +50,4 @@ export async function GET() {
     return Response.json({ error }, { status: 500 });
   }
 }
+*/

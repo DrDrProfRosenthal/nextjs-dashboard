@@ -22,20 +22,20 @@ const url = `https://linguee-api.fly.dev/api/v2/translations?query=${encodeURICo
 
 export async function createInvoice(formData: FormData) {
    
-  const { customerId, amount,newVocab, status } = {
-    customerId: "cc27c14a-0acf-4f4a-a6c9-d45682c144b9", // formData.get('customerId'),
-    amount: "13255", // formData.get('amount'),
-    newVocab: formData.get('engVocab'),
-    status: "pending", // formData.get('status'),
-  };
 
-  const { engVocab, gerVocab, engExample,gerExample } ={
-    engVocab: formData.get('engVocab') as string,
-    gerVocab: formData.get('gerVocab') as string,
-    engExample: formData.get('engExample') as string,
-    gerExample: formData.get('gerExample') as string,
-  };
-    
+  
+ const   engVocab = formData.get('engVocab') as string;
+ const   gerVocab = formData.get('gerVocab') as string;
+ var   engExample = formData.get('engExample') as string;
+ var  gerExample = formData.get('gerExample') as string;
+ if (engExample == "" || gerExample == undefined || gerExample == null ){
+  engExample = " ";
+ }
+ if (gerExample == "" || gerExample == undefined || gerExample == null ){
+  gerExample = " ";
+ }
+ 
+
   
     try {
       await sql`
