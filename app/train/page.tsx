@@ -1,28 +1,12 @@
-
-
-
-import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
-import { fetchCustomers } from '@/app/lib/data';
-
-import { ArrowLeftIcon, ArrowRightIcon,PencilIcon } from '@heroicons/react/24/outline';
-import Pagination from '@/app/ui/addVocabs/pagination';
-
 import Hamburger from '@/app/ui/addVocabs/hamburger';
 import VocabsData from '@/app/ui/dashboard/vocabs';
 import { fetchVocabs } from '@/app/lib/data';
 
 export default async function Page() {
- // const customers = await fetchCustomers();
 
-
- 
  const vocabs = await fetchVocabs();
 
-// const jsonString = JSON.stringify(vocabs, null, 2);
-
-
   return (
-
 
       
    <main className='background-color light-color'>
@@ -38,6 +22,7 @@ export default async function Page() {
 
 
               <div className="vocab-con my-4">
+                  <span className='block dm-sans text-sm italic' >Random <input type="checkbox" id="randomCheckbox" /></span>
                 <span className="current-vocab dm-sans text-4xl bold-color font-semibold" id="current-vocab">vorsichtig, achtsam, argwöhnisch  </span>
 
                   <div className='german-examplecontainer montserrat italic text-base' >
@@ -64,7 +49,7 @@ export default async function Page() {
                               
                             </span>
                               <span id="vocabCover" className='englishExampleVocab counter-color font-medium'>&nbsp;_____&nbsp;</span>
-                              <span id="engEx2" className='font-medium counter-color englishVocab englishExampleVocab counter-color hidden'>&nbsp;wary&nbsp;</span>        
+                              <span className='font-medium counter-color englishVocab englishExampleVocab counter-color'>  <span id="engEx2" className='font-medium counter-color englishVocab englishExampleVocab counter-color hidden'>&nbsp;wary&nbsp;</span></span>        
                    
                              
                             <span id="engEx3"className='english-example montserrat italic light-color font-medium'> 
@@ -72,7 +57,7 @@ export default async function Page() {
                             </span>
                             </span>
                            
-                            <div>
+                            <div className='font-semibold  bold-color text-lg montserrat italic bold-border-color'>
                               <button className='font-semibold  bold-color text-lg montserrat italic bold-border-color'  id="hintBtn">Reveal hint </button>
                             </div>
                             

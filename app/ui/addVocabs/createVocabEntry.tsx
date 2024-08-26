@@ -87,8 +87,8 @@ const handleSearch = useDebouncedCallback(async (params:string,) => {
 return (
     <>  
 
-    <pre id='germanExamples' >{JSON.stringify(germanExamples, null, 2)}</pre>
-    <pre id='englishExamples' >{JSON.stringify(englishExamples, null, 2)}</pre>
+    <pre id='germanExamples' className='hidden' >{JSON.stringify(germanExamples, null, 2)}</pre>
+    <pre id='englishExamples' className='hidden' >{JSON.stringify(englishExamples, null, 2)}</pre>
 
     <form action={createInvoice}>
 

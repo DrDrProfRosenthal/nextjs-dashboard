@@ -200,7 +200,7 @@ input:focus{
 }
 
 .hidden{
-  display:hidden !important;
+  display:none !important;
 }
 
 .verbBox{
@@ -274,7 +274,6 @@ input:focus{
 
 .popupCon{
   position: fixed;
-  display: none;
   z-index: 10;
 
   height: 0%;
@@ -294,6 +293,12 @@ input:focus{
   flex-direction: column;
 
  
+}
+
+
+#vocabCover{
+  color:#e02626;
+
 }
 
 .addVocabCon{

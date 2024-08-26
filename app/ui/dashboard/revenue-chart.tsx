@@ -24,14 +24,7 @@ export default async function RevenueChart({
 
   return (
     <div className="w-full md:col-span-4">
-        lsdkfj
-   
-        
-
-       
-          
-      
-       
+  
    </div>
 
         
@@ -41,29 +34,3 @@ export default async function RevenueChart({
 
 }
 
-
-
-
-
-
-
-/*
-
-
-  revenue,
-}: {
-  revenue: Revenue[];
-}) {
-
-
-===
-
-
-  revenue,
-}: {
-  month: string;
-  revenue: number;
-}) {
-
-
-*/

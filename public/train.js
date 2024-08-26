@@ -4,11 +4,36 @@ var currentIndex = 0;
 var vocabObject = document.querySelector('#object').innerHTML;
 var vocabArray = JSON.parse(vocabObject);
 
+let randomOn = false;
+
+
+
+function switchRandom(){
+    randomOn = document.querySelector('#randomCheckbox').checked; 
+}document.querySelector('#randomCheckbox').addEventListener('change',switchRandom)
+
+
+function newRandIndex(){
+    let newn = Math.floor(Math.random() * 1200);
+    if(vocabArray[newn] != null || vocabArray[newn] != undefined){
+    currentIndex =newn;
+    return currentIndex;
+    }else{
+    newRandIndex();
+    }
+}
+
+
+
 function displayNextVocab() {
-        if(vocabArray[currentIndex].engvocab != "error999" && currentIndex < vocabArray.length){//sind noch Vokabeln da, schreib die nächste hin  
-           
-           
-            
+
+    if(randomOn == true){
+        newRandIndex();
+    }
+    
+
+
+        if(vocabArray[currentIndex].engvocab != "error999" && currentIndex < vocabArray.length){//sind noch Vokabeln da, schreib die nächste hin
             document.getElementById("current-vocab").textContent  = vocabArray[currentIndex].gervocab;
             displayGerExample(String(vocabArray[currentIndex].gerexample),String(vocabArray[currentIndex].gervocab));
             displayEngExample();
@@ -29,15 +54,15 @@ document.querySelector('#myBtn').addEventListener('click', () => {
         if (input.value.trim().toLowerCase() === vocabArray[currentIndex].engvocab.toLowerCase()) {
             input.value = '';       
             if(currentIndex <  vocabArray.length - 1){
-                currentIndex++;
-                
-            }else{
-                
+                currentIndex++;                
+            }else{                
                 currentIndex = 0;          
             }
             
             displayNextVocab();
-
+            hideObj(document.querySelector('#engEx2'));
+            revealObj(document.querySelector('#hintBtn'));
+            revealObj(document.querySelector('#vocabCover'));
 
         } else {
             input.value = '';
@@ -68,11 +93,7 @@ function displayEngExample(){
 
 
 function displayGerExample(sentence, wordToFind){
-                const [part1, part2, part3] = searchGerExample(sentence,wordToFind);                 
-                console.log(part1);
-                console.log(part2);
-                console.log(part3);
-               
+                const [part1, part2, part3] = searchGerExample(sentence,wordToFind);              
                 document.querySelector("#gerEx1").textContent  = part1;
                 document.querySelector("#gerEx2").textContent  = " "+part2+" ";
                 document.querySelector("#gerEx3").textContent  = part3; 
@@ -80,31 +101,24 @@ function displayGerExample(sentence, wordToFind){
 
 
 function searchGerExample(sentence,wordToFind){
-    
-    console.log("sentence" + sentence) //Wenn ich online mit Kreditkarte bezahle, bin ich immer vorsichtig.
-    console.log("word to find" + wordToFind) // vorischt, achtsam
-
-var result = result = splitSentence(sentence, wordToFind);
-
-
-let a = sentence.indexOf(wordToFind); console.log(sentence.indexOf(wordToFind))
+ var result = result = splitSentence(sentence, wordToFind);
+let a = sentence.indexOf(wordToFind); 
 if (a !== -1) {   
     result = splitSentence(sentence, wordToFind);
 }
-
-let wordsArray = splitWords(wordToFind); console.log(wordsArray)
+let wordsArray = splitWords(wordToFind); 
 
 wordsArray.forEach(e => {              
-    let b = sentence.indexOf(e.toString());  console.log(b)    
+    let b = sentence.indexOf(e.toString());  
     if (b !== -1) { 
-        result = splitSentence(sentence, e.toString()); console.log(splitWords(wordToFind));
+        result = splitSentence(sentence, e.toString()); 
     }
     }); 
 
 
 wordsArray = splitWords2(wordToFind);    
 wordsArray.forEach(e => {              
-    let b = sentence.indexOf(e.toString());  console.log(b)       
+    let b = sentence.indexOf(e.toString());    
     if (b !== -1) { 
         result = splitSentence(sentence, e.toString());
     }
@@ -113,19 +127,14 @@ wordsArray.forEach(e => {
     
 wordsArray = splitWords3(wordToFind);    
 wordsArray.forEach(e => {              
-    let b = sentence.indexOf(e.toString());       console.log(b)   
+    let b = sentence.indexOf(e.toString());     
     if (b !== -1) { 
         result = splitSentence(sentence, e.toString());
     }
 }); 
 
 
-
-
-
-
-
-    console.log("result"+result)
+    // console.log("result"+result)
     return result;
 }
 

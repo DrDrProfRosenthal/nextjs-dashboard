@@ -9,7 +9,7 @@ function nextGerEx(){
     throw new console.error("is null");
    }    
 
-    console.log(gIndex)
+  
     if(gIndex == e.length-1 ){
         gIndex = 0;
         document.querySelector('#gerExample').value = e[gIndex];
@@ -29,7 +29,7 @@ function previousGerEx(){
 
     const e = JSON.parse(germanExamples); 
 
-     console.log(gIndex)
+    
      if(gIndex == 0 ){
          gIndex = e.length-1;
          document.querySelector('#gerExample').value = e[gIndex];
@@ -69,12 +69,11 @@ function nextEngEx(){
 function previousEngEx(){
     let engExamples =  document.querySelector('#englishExamples').innerHTML;
     if(engExamples == null){
-        throw new console.error("is null");
-        
+        throw new console.error("is null");        
    }
 
     const e = JSON.parse(engExamples); 
-     console.log(eIndex)
+  
      if(eIndex == 0 ){
         eIndex = e.length-1;
          document.querySelector('#engExample').value = e[eIndex];

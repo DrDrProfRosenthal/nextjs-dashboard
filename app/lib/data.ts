@@ -14,40 +14,26 @@ import React from 'react';
 console.log("loading dataa.ts");
 
 export async function fetchRevenue() {
-  try {
-  
+  try {  
     const data = await sql<Revenue>`SELECT * FROM revenue`;
-
     console.log('Data fetch completed after 3 seconds.');
-
     return data.rows;
-
-
-
   } catch (error) {
-
     console.error('Database Error:', error);
     throw new Error('Failed to fetch revenue data.');
   }
 }
 
 export async function fetchVocabs(){
-  try {
-  
+  try {  
     const data = await sql<Vocabs>`SELECT * FROM vocabs`;
-
     console.log('Data fetch completed after 3 seconds.');
-
     return data.rows;
   } catch (error) {
-
     console.error('Database Error:', error);
     throw new Error('Failed to fetch vocab data.');
   }
-
 }
-
-
 
 export async function fetchLatestInvoices() {
   try {
@@ -57,7 +43,6 @@ export async function fetchLatestInvoices() {
       JOIN customers ON invoices.customer_id = customers.id
       ORDER BY invoices.date DESC
       LIMIT 5`;
-
     const latestInvoices = data.rows.map((invoice) => ({
       ...invoice,
       amount: formatCurrency(invoice.amount),
