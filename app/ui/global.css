@@ -288,7 +288,7 @@ input:focus{
   cursor: pointer;
   transition: 0.5s ease-in-out;
 
-  display: flex;
+  display: none;
   justify-content: center;
   flex-direction: column;
 
