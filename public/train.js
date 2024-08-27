@@ -1,10 +1,10 @@
 console.log("train js");
 
 var vocabList = [];
-var currentIndex = 0;
+
 var vocabObject = document.querySelector('#object').innerHTML;
 var vocabArray = JSON.parse(vocabObject);
-
+var currentIndex = Math.floor(Math.random() * (vocabArray.length -1));
 let randomOn = false;
 
 
@@ -15,13 +15,16 @@ function switchRandom(){
 
 
 function newRandIndex(){
-    let newn = Math.floor(Math.random() * 1200);
+    let e = vocabArray.length -1;
+    let newn = Math.floor(Math.random() * (vocabArray.length -1));
     if(vocabArray[newn] != null || vocabArray[newn] != undefined){
     currentIndex =newn;
     return currentIndex;
     }else{
     newRandIndex();
     }
+
+    
 }
 
 
@@ -31,6 +34,7 @@ function displayNextVocab() {
     if(randomOn == true){
         newRandIndex();
     }
+    console.log(currentIndex)
           if(vocabArray[currentIndex].engvocab != "error999" && currentIndex < vocabArray.length){//sind noch Vokabeln da, schreib die nächste hin
             document.getElementById("current-vocab").textContent  = vocabArray[currentIndex].gervocab;
             displayGerExample(String(vocabArray[currentIndex].gerexample),String(vocabArray[currentIndex].gervocab));
